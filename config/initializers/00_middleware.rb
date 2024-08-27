@@ -2,5 +2,5 @@
 require 'rider_server'
 
 Rails.application.configure do
-  config.middleware.insert_before(ActionDispatch::ShowExceptions, ::RiderServer::Services::RailsExceptionMiddleware)
+  config.middleware.insert_after(ActionDispatch::DebugExceptions, ::RiderServer::Services::RailsExceptionMiddleware)
 end
